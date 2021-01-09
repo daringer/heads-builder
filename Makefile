@@ -15,5 +15,8 @@ all:
 image:
 	docker build -t heads-builder $(DOCKERDIR)
 
-get-heads:
-	git clone https://github.com/osresearch/heads.git $(HEADSDIR)
+get-heads-librem-mini:
+	git clone https://github.com/Nitrokey/heads.git $(HEADSDIR)
+	pushd $(HEADSDIR)
+	git checkout librem_mini
+	popd
