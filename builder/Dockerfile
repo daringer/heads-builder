@@ -37,5 +37,6 @@ RUN apt update && apt install -y \
 	autoconf-archive \
 	libcurl4 \
 	libcurl4-openssl-dev \
-	binutils-dev
+	binutils-dev \
+	innoextract
 
