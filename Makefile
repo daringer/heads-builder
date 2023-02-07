@@ -4,8 +4,8 @@ CONTNAME=heads_$(HEADSDIR)
 SRCDIR=$(BASEHEADSDIR)/$(HEADSDIR)
 
 DOCKERDIR=$(BASEHEADSDIR)/builder
-#DOCKERUIDGID=--user $(shell id -u):$(shell id -g)
-DOCKERUIDGID=
+DOCKERUIDGID=--user $(shell id -u):$(shell id -g)
+#DOCKERUIDGID=
 
 #REPO=https://github.com/Nitrokey/heads.git
 REPO=https://github.com/osresearch/heads.git
