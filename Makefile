@@ -7,6 +7,10 @@ DOCKERDIR=$(BASEHEADSDIR)/builder
 #DOCKERUIDGID=--user $(shell id -u):$(shell id -g)
 DOCKERUIDGID=
 
+#REPO=https://github.com/Nitrokey/heads.git
+REPO=https://github.com/osresearch/heads.git
+
+
 all:
 	-docker stop $(CONTNAME)
 	-docker rm $(CONTNAME)
@@ -15,8 +19,12 @@ all:
 image:
 	docker build -t heads-builder $(DOCKERDIR)
 
+enter:
+	-docker rm $(CONTNAME)
+	docker run -ti --name $(CONTNAME) --mount type=bind,source=$(SRCDIR),target=/heads heads-builder
+
 get-heads:
-	git clone https://github.com/Nitrokey/heads.git $(HEADSDIR)
+	git clone $(REPO) $(HEADSDIR)
 
 get-heads-librem-mini:
 	git clone https://github.com/Nitrokey/heads.git $(HEADSDIR)
