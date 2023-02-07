@@ -19,10 +19,6 @@ all:
 image:
 	docker build -t heads-builder $(DOCKERDIR)
 
-enter:
-	-docker rm $(CONTNAME)
-	docker run -ti --name $(CONTNAME) --mount type=bind,source=$(SRCDIR),target=/heads heads-builder
-
 get-heads:
 	git clone $(REPO) $(HEADSDIR)
 
