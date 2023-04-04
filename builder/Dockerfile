@@ -38,5 +38,7 @@ RUN apt update && apt install -y \
 	libcurl4 \
 	libcurl4-openssl-dev \
 	binutils-dev \
-	innoextract
+	innoextract \
+	libssl-dev \
+	flashrom libflashrom1 libflashrom-dev
 
